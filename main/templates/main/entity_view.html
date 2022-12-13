@@ -14,12 +14,13 @@
     </div>
     <div class="col">
         <p>{{ entity.description }}</p>
-        <p><strong>Тип:</strong> {{ types|get_item:entity.type }}</p>
-        <p><strong>Адреса:</strong> {{ entity.address }}</p>
-        <p><strong>Ціни:</strong> {{ entity.prices }}</p>
-        <p><strong>Телефон:</strong> {{ entity.phone }}</p>
-        <p><strong>Веб-сторінка:</strong> <a href="{{ entity.website }}" target="_blank">Перейти</a></p>
-        <p><strong>Коли відкриті?:</strong> {{ entity.open_hours }}</p>
+        <hr/>
+        <p><strong>{{ restaurant_field_labels.type }}:</strong> {{ types|get_item:entity.type }}</p>
+        <p><strong>{{ restaurant_field_labels.open_hours }}:</strong> {{ entity.open_hours }}</p>
+        <p><strong>{{ restaurant_field_labels.prices }}:</strong> {{ entity.prices }}</p>
+        <p><strong>{{ restaurant_field_labels.address }}:</strong> {{ entity.address }}</p>
+        <p><strong>{{ restaurant_field_labels.phone }}:</strong> {{ entity.phone }}</p>
+        <p><strong>{{ restaurant_field_labels.website }}:</strong> <a href="{{ entity.website }}" target="_blank">Перейти</a></p>
     </div>
 </div>
 

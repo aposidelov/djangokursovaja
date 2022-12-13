@@ -24,9 +24,9 @@
 
         <div class="text-end">
           {% if user.is_authenticated == False %}
-          <a href="admin/login/?next=/admin/" class="btn btn-outline-light me-2">Логін</a>
+          <a href="/admin/login/?next=/" class="btn btn-outline-light me-2">Логін</a>
           {% else %}
-          <a href="admin/logout/?next=/" class="btn btn-outline-light me-2">Вийти</a>
+          <a href="/admin/logout/?next=/" class="btn btn-outline-light me-2">Вийти</a>
           {% endif %}
         </div>
       </div>

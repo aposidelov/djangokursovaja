@@ -7,25 +7,25 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    <label for="title"><b>Назва</b></label>
+    <label for="title"><b>{{ restaurant_field_labels.title }}</b></label>
     {{ form.title }}
-    <label for="description"><b>Опис</b></label>
+    <label for="description"><b>{{ restaurant_field_labels.description }}</b></label>
     {{ form.description }}
-    <label for="type"><b>Тип</b></label>
+    <label for="type"><b>{{ restaurant_field_labels.type }}</b></label>
     {{ form.type }}
-    <label for="website"><b>Веб-сторінка</b></label>
+    <label for="website"><b>{{ restaurant_field_labels.website }}</b></label>
     {{ form.website }}
-    <label for="longitude"><b>Довгота</b></label>
+    <label for="longitude"><b>{{ restaurant_field_labels.longitude }}</b></label>
     {{ form.longitude }}
-    <label for="latitude"><b>Ширина</b></label>
+    <label for="latitude"><b>{{ restaurant_field_labels.latitude }}</b></label>
     {{ form.latitude }}
-    <label for="prices"><b>Ціни</b></label>
+    <label for="prices"><b>{{ restaurant_field_labels.prices }}</b></label>
     {{ form.prices }}
-    <label for="open_hours"><b>Коли відкриті?</b></label>
+    <label for="open_hours"><b>{{ restaurant_field_labels.open_hours }}</b></label>
     {{ form.open_hours }}
-    <label for="address"><b>Адреса</b></label>
+    <label for="address"><b>{{ restaurant_field_labels.address }}</b></label>
     {{ form.address }}
-    <label for="phone"><b>Телефон</b></label>
+    <label for="phone"><b>{{ restaurant_field_labels.phone }}</b></label>
     {{ form.phone }}
     <br/>
     <button type="submit" class="btn btn-success">{% block button_text %}{% endblock %}</button>
