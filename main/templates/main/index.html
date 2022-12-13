@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}<a href="{% url 'entity_add' %}" class="btn btn-primary">Додати завід</a>{% endif %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Назва</th>
+      <th scope="col">Тип</th>
+      <th scope="col">Ціни</th>
+      <th scope="col">Веб-сторінка</th>
+      <th scope="col" style="min-width:150px">Коли відкриті?</th>
+      <th scope="col">Адреса</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Дії</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in restaurants %}
+    <tr>
+      <th>{{ item.title }}</th>
+      <td>{{ types|get_item:item.type }}</td>
+      <td>{{ item.prices }}</td>
+      <td><a href="{{ item.website }}" target="_blank">Перейти</a></td>
+      <td>{{ item.open_hours }}</td>
+      <td>{{ item.address }}</td>
+      <td>{{ item.phone }}</td>
+      <td><a href="{% url 'entity_view' item.id %}">Відкрити</a>{% if user.is_authenticated %} <a href="{% url 'entity_update' item.id %}">Редагувати</a> <a href="{% url 'entity_delete' item.id %}">Видалити</a>{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

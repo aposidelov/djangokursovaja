@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <label for="title"><b>Назва</b></label>
+    {{ form.title }}
+    <label for="description"><b>Опис</b></label>
+    {{ form.description }}
+    <label for="type"><b>Тип</b></label>
+    {{ form.type }}
+    <label for="website"><b>Веб-сторінка</b></label>
+    {{ form.website }}
+    <label for="longitude"><b>Довгота</b></label>
+    {{ form.longitude }}
+    <label for="latitude"><b>Ширина</b></label>
+    {{ form.latitude }}
+    <label for="prices"><b>Ціни</b></label>
+    {{ form.prices }}
+    <label for="open_hours"><b>Коли відкриті?</b></label>
+    {{ form.open_hours }}
+    <label for="address"><b>Адреса</b></label>
+    {{ form.address }}
+    <label for="phone"><b>Телефон</b></label>
+    {{ form.phone }}
+    <br/>
+    <button type="submit" class="btn btn-success">{% block button_text %}{% endblock %}</button>
+</form>
+{% endblock %}

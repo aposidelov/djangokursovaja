@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ entity.title }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <div>
+             <iframe width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&cp={{ entity.longitude }}~{{ entity.latitude }}&lvl=16.140227214146726&typ=d&sty=h&src=SHELL&FORM=MBEDV8" scrolling="no">
+             </iframe>
+        </div>
+    </div>
+    <div class="col">
+        <p>{{ entity.description }}</p>
+        <p><strong>Тип:</strong> {{ types|get_item:entity.type }}</p>
+        <p><strong>Адреса:</strong> {{ entity.address }}</p>
+        <p><strong>Ціни:</strong> {{ entity.prices }}</p>
+        <p><strong>Телефон:</strong> {{ entity.phone }}</p>
+        <p><strong>Веб-сторінка:</strong> <a href="{{ entity.website }}" target="_blank">Перейти</a></p>
+        <p><strong>Коли відкриті?:</strong> {{ entity.open_hours }}</p>
+    </div>
+</div>
+
+{% endblock %}

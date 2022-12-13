@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h3>Ви впевнені, що бажаєте видалити завід "{{ entity_title }}"?</h3> <em>Цю операцію немає можливості потім відмінити.</em>
+    </br></br>
+    <button type="submit" class="btn btn-warning">Підтвердити</button>&nbsp;&nbsp; <a class="btn btn-primary" href="{% url 'home' %}">Назад</a>
+</form>
+{% endblock %}
